@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="NIMI KINGS Real Estate — Verified land sales, property sourcing, leasing, agricultural land activation, and property management across Nigeria." />
-  <title>Real Estate — NIMI KINGS</title>
+  <meta name="description" content="NIMI KINGS Real Estate: Verified land sales, property sourcing, leasing, agricultural land activation, and property management across Nigeria." />
+  <title>Real Estate | NIMI KINGS</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -12,10 +12,18 @@
 </head>
 <body>
 
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader-inner">
+      <img src="logo.jpg" alt="" class="preloader-logo" />
+      <div class="preloader-text">NIMI <span class="logo-accent">KINGS</span></div>
+      <div class="preloader-spinner"></div>
+    </div>
+  </div>
+
   <header class="site-header" id="site-header">
     <nav class="nav-container" aria-label="Main navigation">
       <a href="index.html" class="nav-logo" aria-label="NIMI KINGS home">
-        <span class="logo-mark">NK</span>
+        <img src="logo.jpg" alt="Nimi Kings" class="logo-img" />
         <span class="logo-text">NIMI <span class="logo-accent">KINGS</span></span>
       </a>
       <ul class="nav-links" role="list">
@@ -23,7 +31,8 @@
         <li><a href="about.html" class="nav-link">About</a></li>
         <li><a href="real-estate.html" class="nav-link active" aria-current="page">Real Estate</a></li>
         <li><a href="construction.html" class="nav-link">Construction</a></li>
-        <li><a href="intelligence.html" class="nav-link">AI Intelligence</a></li>
+        <li><a href="agriculture.html" class="nav-link">Agriculture</a></li>
+        <li><a href="technology.html" class="nav-link">Technology</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
       <div class="nav-actions">
@@ -33,20 +42,21 @@
         </button>
       </div>
     </nav>
+  </header>
     <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
       <ul class="mobile-nav-links" role="list">
         <li><a href="index.html" class="mobile-nav-link">Home</a></li>
         <li><a href="about.html" class="mobile-nav-link">About</a></li>
         <li><a href="real-estate.html" class="mobile-nav-link active" aria-current="page">Real Estate</a></li>
         <li><a href="construction.html" class="mobile-nav-link">Construction</a></li>
-        <li><a href="intelligence.html" class="mobile-nav-link">AI Intelligence</a></li>
+        <li><a href="agriculture.html" class="mobile-nav-link">Agriculture</a></li>
+        <li><a href="technology.html" class="mobile-nav-link">Technology</a></li>
         <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
       </ul>
       <div class="mobile-nav-cta">
         <a href="contact.html" class="btn btn-primary btn-full">Book a Consultation</a>
       </div>
     </div>
-  </header>
 
   <main>
 
@@ -57,7 +67,7 @@
         <div class="page-hero-content animate-fade-up">
           <span class="page-hero-label">Real Estate</span>
           <h1>Every square metre, accounted for.</h1>
-          <p>From first inquiry to title transfer, we handle the full real estate lifecycle — with rigorous document intelligence and deep market knowledge built into every transaction.</p>
+          <p>From first inquiry to title transfer, we handle the full real estate lifecycle, with rigorous document verification and deep market knowledge built into every transaction.</p>
           <div class="page-hero-actions">
             <a href="contact.html" class="btn btn-gold btn-lg">Express Interest</a>
             <a href="#listings" class="btn btn-ghost-white btn-lg">View Listings</a>
@@ -72,7 +82,7 @@
         <div class="section-header animate-fade-up">
           <span class="section-label">Our Services</span>
           <h2 class="section-title">The full real estate lifecycle, managed.</h2>
-          <p class="section-subtitle">We don't just list properties — we verify them, analyse them, and manage every step of the transaction so your capital is always protected.</p>
+          <p class="section-subtitle">We don't just list properties. We verify them, analyse them, and manage every step of the transaction so your capital is always protected.</p>
         </div>
         <div class="services-grid">
           <div class="service-card animate-fade-up delay-1">
@@ -80,42 +90,42 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
             </div>
             <h4>Land Sales &amp; Sourcing</h4>
-            <p>Access verified land parcels across Lagos, Nasarawa, Abuja outskirts, and Kogi — each with documented title history, boundary surveys, and full infrastructure context. We don't list unverified plots.</p>
+            <p>Access verified land parcels across Lagos, Nasarawa, Abuja outskirts, and Kogi, each with documented title history, boundary surveys, and full infrastructure context. We don't list unverified plots.</p>
           </div>
           <div class="service-card animate-fade-up delay-2">
             <div class="service-icon" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
             <h4>Property Sourcing</h4>
-            <p>Tell us your brief — budget, location, intended use — and our intelligence engine matches you with properties ranked by investment value, verified title, and risk rating.</p>
+            <p>Tell us your brief: budget, location, intended use, and our team matches you with properties ranked by investment value, verified title, and risk rating.</p>
           </div>
           <div class="service-card animate-fade-up delay-1">
             <div class="service-icon" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
             <h4>Title &amp; Document Verification</h4>
-            <p>Multi-source cross-referencing of Certificates of Occupancy, gazette records, survey plans, and ownership chains. We flag discrepancies before money changes hands — not after.</p>
+            <p>Multi-source cross-referencing of Certificates of Occupancy, gazette records, survey plans, and ownership chains. We flag discrepancies before money changes hands, not after.</p>
           </div>
           <div class="service-card animate-fade-up delay-2">
             <div class="service-icon" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
             </div>
             <h4>Residential &amp; Commercial Leasing</h4>
-            <p>Structured lease agreements, qualified tenant sourcing, and ongoing tenancy management for residential and commercial properties — professionally handled with full documentation.</p>
+            <p>Structured lease agreements, qualified tenant sourcing, and ongoing tenancy management for residential and commercial properties, professionally handled with full documentation.</p>
           </div>
           <div class="service-card animate-fade-up delay-1">
             <div class="service-icon" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
             </div>
             <h4>Agricultural Land Activation</h4>
-            <p>Unlock idle agricultural land through structured management programs. We connect landowners with commercial farming operators — turning dormant assets into income-generating land.</p>
+            <p>Unlock idle agricultural land through structured management programs. We connect landowners with commercial farming operators, turning dormant assets into income-generating land.</p>
           </div>
           <div class="service-card animate-fade-up delay-2">
             <div class="service-icon" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
             </div>
             <h4>Property Management</h4>
-            <p>End-to-end management of your property portfolio — maintenance, rent collection, reporting, and tenant relations — so you can be a hands-off owner with full visibility.</p>
+            <p>End-to-end management of your property portfolio: maintenance, rent collection, reporting, and tenant relations, so you can be a hands-off owner with full visibility.</p>
           </div>
         </div>
       </div>
@@ -139,7 +149,7 @@
             <div class="listing-body">
               <div class="listing-location">
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                Karu, Nasarawa — Abuja Corridor
+                Karu, Nasarawa (Abuja Corridor)
               </div>
               <h3 class="listing-title">1,000 sqm Residential Plot</h3>
               <div class="listing-tags">
@@ -154,7 +164,7 @@
                 </div>
                 <div class="listing-metric">
                   <span class="metric-label">Est. 3-yr Growth</span>
-                  <span class="metric-value">+22–35%</span>
+                  <span class="metric-value">+22-35%</span>
                 </div>
               </div>
               <div class="listing-price">₦45,000,000 <span class="listing-price-label">asking price</span></div>
@@ -186,7 +196,7 @@
                 </div>
                 <div class="listing-metric">
                   <span class="metric-label">Est. 3-yr Growth</span>
-                  <span class="metric-value">+18–28%</span>
+                  <span class="metric-value">+18-28%</span>
                 </div>
               </div>
               <div class="listing-price">₦78,000,000 <span class="listing-price-label">asking price</span></div>
@@ -217,7 +227,7 @@
                 </div>
                 <div class="listing-metric">
                   <span class="metric-label">Est. 3-yr Growth</span>
-                  <span class="metric-value">+15–25%</span>
+                  <span class="metric-value">+15-25%</span>
                 </div>
               </div>
               <div class="listing-price">₦32,000,000 <span class="listing-price-label">asking price</span></div>
@@ -239,9 +249,9 @@
           <div>
             <span class="verification-eyebrow">Why it matters</span>
             <h2 class="verification-title">Unverified land is Nigeria's biggest investment risk.</h2>
-            <p class="verification-text">Title fraud, multiple sales of the same parcel, and litigation-encumbered land destroy wealth every year across Nigeria. We exist to change that — one verified transaction at a time.</p>
+            <p class="verification-text">Title fraud, multiple sales of the same parcel, and litigation-encumbered land destroy wealth every year across Nigeria. We exist to change that, one verified transaction at a time.</p>
             <p class="verification-text-sm">Every property we handle undergoes a rigorous 5-point verification protocol: title history, physical boundary confirmation, gazette cross-check, litigation search, and infrastructure status assessment.</p>
-            <a href="intelligence.html" class="btn btn-gold">See How Our Intelligence Works</a>
+            <a href="about.html" class="btn btn-gold">See How We Verify Every Title</a>
           </div>
           <div style="display:flex;flex-direction:column;gap:var(--space-4);" class="animate-fade-up delay-2">
             <div class="verification-check">
@@ -307,14 +317,14 @@
       <div class="footer-top">
         <div>
           <a href="index.html" class="nav-logo footer-logo" aria-label="NIMI KINGS home">
-            <span class="logo-mark">NK</span>
+            <img src="logo.jpg" alt="Nimi Kings" class="logo-img" />
             <span class="logo-text">NIMI <span class="logo-accent">KINGS</span></span>
           </a>
-          <p class="footer-tagline">Africa's most intelligent real estate platform. Real estate, construction, and AI intelligence — integrated.</p>
+          <p class="footer-tagline">Real estate, construction, and agriculture, integrated across Nigeria.</p>
           <div class="footer-socials" aria-label="Social media links">
-            <a href="#" class="social-link" aria-label="LinkedIn" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-            <a href="#" class="social-link" aria-label="Twitter / X" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></a>
-            <a href="#" class="social-link" aria-label="Instagram" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="https://www.linkedin.com/in/attah-jaypaul-b8595040b" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="https://www.tiktok.com/@nimi.kings.limite" class="social-link" aria-label="TikTok" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M16 3v11.5a3.5 3.5 0 1 1-3-3.46"/><path d="M16 3c.3 2.6 2 4.5 4.5 4.8"/></svg></a>
+            <a href="https://wa.me/2349049653231" class="social-link" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.55L3 20l1.05-5.4A8.5 8.5 0 1 1 21 11.5z"/><path d="M8.5 10.5c.3 2.5 2.5 4.7 5 5"/></svg></a>
           </div>
         </div>
         <nav class="footer-nav" aria-label="Footer navigation">
@@ -323,8 +333,8 @@
             <ul class="footer-nav-list" role="list">
               <li><a href="real-estate.html" class="footer-link active">Real Estate</a></li>
               <li><a href="construction.html" class="footer-link">Construction</a></li>
-              <li><a href="intelligence.html" class="footer-link">AI Intelligence</a></li>
-              <li><a href="real-estate.html" class="footer-link">Agricultural Land</a></li>
+              <li><a href="agriculture.html" class="footer-link">Agriculture</a></li>
+              <li><a href="technology.html" class="footer-link">Technology</a></li>
             </ul>
           </div>
           <div>
@@ -348,8 +358,8 @@
         </nav>
       </div>
       <div class="footer-bottom">
-        <p class="footer-copy">&copy; 2026 NIMI KINGS. All rights reserved.</p>
-        <p class="footer-made">Built with intelligence.</p>
+        <p class="footer-copy">&copy; 2026 NIMI KINGS. All rights reserved. Registered with CAC &amp; SCUML.</p>
+        <p class="footer-made">Real Estate. Construction. Agriculture.</p>
         <div class="footer-legal">
           <a href="#" class="footer-link">Privacy Policy</a>
           <a href="#" class="footer-link">Terms of Service</a>

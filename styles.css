@@ -1,29 +1,31 @@
 /* ============================================================
    NIMI KINGS — styles.css
-   Premium Real Estate Platform — Navy + Gold
+   Premium Real Estate Platform — Green + Gold + White
    Benchmark: Compass · Luxury Presence · Zillow
    ============================================================ */
 
 /* ===== DESIGN TOKENS ===== */
 :root {
   /* Brand */
-  --color-navy:       #0D1118;
-  --color-navy-light: #1A2540;
-  --color-navy-mid:   #243255;
+  --color-green:       #0A6033;
+  --color-green-light: #147A43;
+  --color-green-mid:   #0E5C38;
   --color-gold:       #C9A84C;
   --color-gold-light: #E8C96A;
   --color-gold-pale:  #FDF9EE;
+  --color-btn:        #0A6033;
+  --color-btn-light:  #147A43;
 
   /* Backgrounds */
   --bg-base:     #FFFFFF;
   --bg-surface:  #F8F7F4;
   --bg-elevated: #F0EDE6;
-  --bg-dark:     #0D1118;
-  --bg-dark-2:   #1A2540;
+  --bg-dark:     #0A6033;
+  --bg-dark-2:   #147A43;
 
   /* Legacy accent aliases (keep JS/HTML compat) */
-  --accent:       #0D1118;
-  --accent-hover: #1A2540;
+  --accent:       #0A6033;
+  --accent-hover: #147A43;
   --accent-light: #FDF9EE;
   --accent-mid:   #C9A84C;
 
@@ -108,7 +110,64 @@ ul, ol { list-style: none; }
   border-radius: var(--radius-sm);
 }
 
-::selection { background: rgba(201,168,76,0.18); color: var(--color-navy); }
+::selection { background: rgba(201,168,76,0.18); color: var(--color-green); }
+
+/* ============================================================
+   PRELOADER
+   ============================================================ */
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--color-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+.preloader-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+}
+.preloader-logo {
+  width: 64px; height: 64px;
+  border-radius: var(--radius-md);
+  object-fit: contain;
+  animation: preloader-pulse 1.6s ease-in-out infinite;
+}
+.preloader-text {
+  font-family: var(--font-sans);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+.preloader-text .logo-accent { color: var(--color-gold); }
+.preloader-spinner {
+  width: 30px; height: 30px;
+  border: 3px solid rgba(255,255,255,0.15);
+  border-top-color: var(--color-gold);
+  border-radius: 50%;
+  animation: preloader-spin 0.9s linear infinite;
+}
+.preloader.preloader-hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+@keyframes preloader-pulse {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.08); }
+}
+@keyframes preloader-spin {
+  to { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .preloader-logo, .preloader-spinner { animation: none; }
+}
 
 /* ===== LAYOUT ===== */
 .container {
@@ -150,39 +209,39 @@ p  { color: var(--text-secondary); line-height: 1.78; }
   text-decoration: none;
 }
 
-/* Gold primary — the flagship button */
+/* Navy primary — the flagship button */
 .btn-primary,
 .btn-gold {
-  background: var(--color-gold);
-  color: var(--color-navy);
-  border-color: var(--color-gold);
+  background: var(--color-btn);
+  color: #FFFFFF;
+  border-color: var(--color-btn);
   font-weight: 700;
 }
 .btn-primary:hover,
 .btn-gold:hover {
-  background: var(--color-gold-light);
-  border-color: var(--color-gold-light);
+  background: var(--color-btn-light);
+  border-color: var(--color-btn-light);
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(201,168,76,0.30);
+  box-shadow: 0 6px 20px rgba(10,96,51,0.35);
 }
 
 /* Dark button — navy bg white text */
 .btn-dark {
-  background: var(--color-navy);
+  background: var(--color-green);
   color: #FFFFFF;
-  border-color: var(--color-navy);
+  border-color: var(--color-green);
   font-weight: 700;
 }
 .btn-dark:hover {
-  background: var(--color-navy-light);
-  border-color: var(--color-navy-light);
+  background: var(--color-green-light);
+  border-color: var(--color-green-light);
   transform: translateY(-1px);
 }
 
 /* White button — for use on dark/gold backgrounds */
 .btn-white {
   background: #FFFFFF;
-  color: var(--color-navy);
+  color: var(--color-green);
   border-color: #FFFFFF;
   font-weight: 700;
 }
@@ -192,17 +251,17 @@ p  { color: var(--text-secondary); line-height: 1.78; }
   transform: translateY(-1px);
 }
 
-/* Ghost gold — gold border, gold text, transparent */
+/* Ghost navy — navy border, navy text, transparent */
 .btn-outline,
 .btn-ghost-gold {
   background: transparent;
-  color: var(--color-gold);
-  border-color: var(--color-gold);
+  color: var(--color-btn);
+  border-color: var(--color-btn);
 }
 .btn-outline:hover,
 .btn-ghost-gold:hover {
-  background: var(--color-gold);
-  color: var(--color-navy);
+  background: var(--color-btn);
+  color: #FFFFFF;
   transform: translateY(-1px);
 }
 
@@ -222,11 +281,11 @@ p  { color: var(--text-secondary); line-height: 1.78; }
 /* Ghost dark — for gold/light backgrounds */
 .btn-ghost-dark {
   background: transparent;
-  color: var(--color-navy);
+  color: var(--color-green);
   border-color: rgba(13,17,24,0.35);
 }
 .btn-ghost-dark:hover {
-  border-color: var(--color-navy);
+  border-color: var(--color-green);
   background: rgba(13,17,24,0.06);
 }
 
@@ -262,7 +321,7 @@ section { padding: var(--space-24) 0; }
 .section-subtitle { font-size: var(--text-lg); color: var(--text-secondary); line-height: 1.78; }
 
 /* Dark section utility */
-.section-dark { background: var(--color-navy); }
+.section-dark { background: var(--color-green); }
 .section-dark h2, .section-dark h3 { color: #FFFFFF; }
 .section-dark p { color: rgba(255,255,255,0.60); }
 
@@ -287,12 +346,44 @@ section { padding: var(--space-24) 0; }
   background-position: center;
   background-repeat: no-repeat;
   z-index: 0;
+  animation: bg-drift 28s ease-in-out infinite;
+  will-change: transform, background-position;
 }
 .hero-img-layer::after {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(to bottom, rgba(13,17,24,0.52) 0%, rgba(13,17,24,0.78) 100%);
+}
+
+/* ===== MOVING PARTS: subtle background drift + gentle float ===== */
+@keyframes bg-drift {
+  0%   { background-position: 50% 50%; transform: scale(1.02); }
+  50%  { background-position: 56% 44%; transform: scale(1.08); }
+  100% { background-position: 50% 50%; transform: scale(1.02); }
+}
+@keyframes gentle-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+.service-icon,
+.value-icon,
+.contact-info-icon,
+.step-circle {
+  animation: gentle-float 5s ease-in-out infinite;
+}
+.service-card:nth-child(2n) .service-icon,
+.value-card:nth-child(2n) .value-icon { animation-delay: 0.6s; }
+.service-card:nth-child(3n) .service-icon { animation-delay: 1.2s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-img-layer,
+  .service-icon,
+  .value-icon,
+  .contact-info-icon,
+  .step-circle {
+    animation: none;
+  }
 }
 
 /* ===== CARD IMAGES ===== */
@@ -327,7 +418,7 @@ section { padding: var(--space-24) 0; }
   top: 0; left: 0; right: 0;
   z-index: 100;
   height: var(--nav-height);
-  background: rgba(13,17,24,0.94);
+  background: rgba(10,96,51,0.94);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255,255,255,0.06);
@@ -357,7 +448,7 @@ section { padding: var(--space-24) 0; }
 .logo-mark {
   width: 36px; height: 36px;
   background: var(--color-gold);
-  color: var(--color-navy);
+  color: var(--color-green);
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
@@ -365,6 +456,12 @@ section { padding: var(--space-24) 0; }
   font-family: var(--font-display);
   font-size: var(--text-lg);
   font-weight: 400;
+  flex-shrink: 0;
+}
+.logo-img {
+  width: 36px; height: 36px;
+  border-radius: var(--radius-sm);
+  object-fit: contain;
   flex-shrink: 0;
 }
 .logo-text {
@@ -418,6 +515,19 @@ section { padding: var(--space-24) 0; }
 .nav-cta { display: none; }
 @media (min-width: 900px) { .nav-cta { display: inline-flex; } }
 
+/* CTA buttons that sit on the green header/drawer need gold, not green, to stay visible */
+.nav-cta,
+.mobile-nav-cta .btn {
+  background: var(--color-gold);
+  color: var(--color-green);
+  border-color: var(--color-gold);
+}
+.nav-cta:hover,
+.mobile-nav-cta .btn:hover {
+  background: var(--color-gold-light);
+  border-color: var(--color-gold-light);
+}
+
 .mobile-menu-toggle {
   display: flex;
   flex-direction: column;
@@ -445,18 +555,21 @@ section { padding: var(--space-24) 0; }
 
 .mobile-nav {
   position: fixed;
-  top: var(--nav-height);
-  left: 0; right: 0;
-  background: var(--color-navy);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  padding: var(--space-4) var(--container-pad) var(--space-6);
-  transform: translateY(-110%);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(300px, 82vw);
+  background: var(--color-green);
+  border-left: 1px solid rgba(255,255,255,0.08);
+  padding: calc(var(--nav-height) + var(--space-4)) var(--container-pad) var(--space-6);
+  transform: translateX(100%);
   opacity: 0;
+  overflow-y: auto;
   transition: transform var(--transition-slow), opacity var(--transition-slow);
   z-index: 99;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  box-shadow: -8px 0 32px rgba(0,0,0,0.4);
 }
-.mobile-nav.open { transform: translateY(0); opacity: 1; }
+.mobile-nav.open { transform: translateX(0); opacity: 1; }
 
 .mobile-nav-links { display: flex; flex-direction: column; gap: var(--space-1); }
 .mobile-nav-link {
@@ -473,13 +586,27 @@ section { padding: var(--space-24) 0; }
 .mobile-nav-link.active { color: var(--color-gold); }
 .mobile-nav-cta { display: flex; margin-top: var(--space-4); width: 100%; justify-content: center; }
 
-@media (min-width: 900px) { .mobile-nav { display: none; } }
+.mobile-nav-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 98;
+  transition: opacity var(--transition-slow);
+}
+.mobile-nav-backdrop.visible { opacity: 1; pointer-events: auto; }
+
+@media (min-width: 900px) {
+  .mobile-nav { display: none; }
+  .mobile-nav-backdrop { display: none; }
+}
 
 /* ============================================================
    PAGE HERO (inner pages — 60vh)
    ============================================================ */
 .page-hero {
-  background: var(--color-navy);
+  background: var(--color-green);
   min-height: 60vh;
   padding: calc(var(--nav-height) + var(--space-20)) 0 var(--space-20);
   position: relative;
@@ -526,7 +653,7 @@ section { padding: var(--space-24) 0; }
    HOME HERO — Centered full-bleed
    ============================================================ */
 .hero {
-  background: var(--color-navy);
+  background: var(--color-green);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -588,6 +715,7 @@ section { padding: var(--space-24) 0; }
   color: var(--color-gold);
 }
 .hero-headline .accent-word { color: var(--color-gold); }
+.hero-headline-4 { font-size: clamp(2.2rem, 6vw, 3.7rem); }
 
 .hero-sub {
   font-size: clamp(var(--text-base), 2vw, var(--text-xl));
@@ -670,7 +798,7 @@ section { padding: var(--space-24) 0; }
 }
 .search-tab:hover { color: var(--text-primary); background: var(--bg-surface); }
 .search-tab.active {
-  color: var(--color-navy);
+  color: var(--color-green);
   background: var(--bg-surface);
 }
 .search-divider {
@@ -718,7 +846,7 @@ section { padding: var(--space-24) 0; }
   font-size: clamp(2.2rem, 4vw, var(--text-7xl));
   font-weight: 400;
   letter-spacing: -0.03em;
-  color: var(--color-navy);
+  color: var(--color-green);
   line-height: 1;
 }
 .stat-label {
@@ -743,7 +871,7 @@ section { padding: var(--space-24) 0; }
 
 .pillars-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--space-6);
 }
 
@@ -844,7 +972,7 @@ section { padding: var(--space-24) 0; }
 }
 .pillar-card:hover::before { transform: scaleX(1); }
 
-.pillar-card-featured { background: var(--color-navy); border-color: var(--color-navy); }
+.pillar-card-featured { background: var(--color-green); border-color: var(--color-green); }
 .pillar-card-featured::before { background: var(--color-gold); }
 .pillar-card-featured .pillar-title,
 .pillar-card-featured .pillar-desc,
@@ -914,7 +1042,7 @@ section { padding: var(--space-24) 0; }
    HOW IT WORKS
    ============================================================ */
 .how-it-works {
-  background: var(--color-navy);
+  background: var(--color-green);
   border-top: none;
   border-bottom: none;
 }
@@ -958,7 +1086,7 @@ section { padding: var(--space-24) 0; }
 .how-step-num {
   width: 40px; height: 40px;
   background: var(--color-gold);
-  color: var(--color-navy);
+  color: var(--color-green);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1040,7 +1168,7 @@ section { padding: var(--space-24) 0; }
 }
 .author-avatar {
   width: 48px; height: 48px;
-  background: var(--color-navy);
+  background: var(--color-green);
   color: var(--color-gold);
   border-radius: 50%;
   display: flex;
@@ -1107,7 +1235,7 @@ section { padding: var(--space-24) 0; }
   flex-wrap: wrap;
 }
 .home-cta h2 {
-  color: var(--color-navy);
+  color: var(--color-green);
   font-size: clamp(1.6rem, 3vw, 2.5rem);
 }
 .home-cta p {
@@ -1381,7 +1509,7 @@ section { padding: var(--space-24) 0; }
 .process-step:hover .step-circle {
   border-color: var(--color-gold);
   background: var(--color-gold);
-  color: var(--color-navy);
+  color: var(--color-green);
 }
 .step-num-label {
   font-size: 10px;
@@ -1454,7 +1582,7 @@ section { padding: var(--space-24) 0; }
 
 /* Construction stats band */
 .construction-stats {
-  background: var(--color-navy);
+  background: var(--color-green);
   padding: var(--space-20) 0;
   position: relative;
   overflow: hidden;
@@ -1538,7 +1666,7 @@ section { padding: var(--space-24) 0; }
   padding: var(--space-20) 0;
 }
 .dashboard-mockup {
-  background: var(--color-navy);
+  background: var(--color-green);
   border-radius: var(--radius-xl);
   overflow: hidden;
   border: 1px solid rgba(255,255,255,0.07);
@@ -1578,7 +1706,7 @@ section { padding: var(--space-24) 0; }
   background: rgba(255,255,255,0.05);
 }
 .dash-panel {
-  background: var(--color-navy);
+  background: var(--color-green);
   padding: var(--space-6);
 }
 .dash-panel-label {
@@ -1663,7 +1791,7 @@ section { padding: var(--space-24) 0; }
   gap: var(--space-5);
 }
 .ai-cap-card {
-  background: var(--color-navy);
+  background: var(--color-green);
   border: 1px solid rgba(255,255,255,0.06);
   border-top: 3px solid transparent;
   border-radius: var(--radius-xl);
@@ -1700,7 +1828,7 @@ section { padding: var(--space-24) 0; }
 
 /* Data sources band */
 .data-sources-band {
-  background: var(--color-navy);
+  background: var(--color-green);
   padding: var(--space-20) 0;
   position: relative;
   overflow: hidden;
@@ -1785,7 +1913,7 @@ section { padding: var(--space-24) 0; }
   font-family: var(--font-display);
   font-size: var(--text-4xl);
   font-weight: 400;
-  color: var(--color-navy);
+  color: var(--color-green);
   letter-spacing: -0.03em;
 }
 .sidebar-stat-label { font-size: var(--text-sm); color: var(--text-secondary); }
@@ -1796,7 +1924,7 @@ section { padding: var(--space-24) 0; }
   gap: var(--space-4);
   margin-top: var(--space-6);
 }
-.sidebar-stat-num   { font-family: var(--font-display); font-size: var(--text-3xl); font-weight: 400; color: var(--color-navy); }
+.sidebar-stat-num   { font-family: var(--font-display); font-size: var(--text-3xl); font-weight: 400; color: var(--color-green); }
 .sidebar-stat-note  { font-size: 10px; color: var(--text-muted); font-style: italic; }
 
 .sidebar-locations {
@@ -1921,7 +2049,7 @@ section { padding: var(--space-24) 0; }
 .team-section { background: var(--bg-base); border-top: 1px solid var(--border); padding: var(--space-20) 0; }
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--space-6);
 }
 .team-card {
@@ -1973,7 +2101,7 @@ section { padding: var(--space-24) 0; }
 
 /* Dark navy info card */
 .contact-info-card {
-  background: var(--color-navy);
+  background: var(--color-green);
   border: 1px solid rgba(255,255,255,0.06);
   border-radius: var(--radius-xl);
   padding: var(--space-8);
@@ -2048,7 +2176,7 @@ a.contact-info-val:hover { color: var(--color-gold); }
 .contact-links-card a:hover { gap: var(--space-3); }
 
 .contact-response-card {
-  background: var(--color-navy);
+  background: var(--color-green);
   border-radius: var(--radius-xl);
   padding: var(--space-6);
   display: flex;
@@ -2219,7 +2347,7 @@ a.contact-info-val:hover { color: var(--color-gold); }
    VERIFICATION BAND (Real Estate)
    ============================================================ */
 .verification-band {
-  background: var(--color-navy);
+  background: var(--color-green);
   padding: var(--space-20) 0;
   position: relative;
   overflow: hidden;
@@ -2282,7 +2410,7 @@ a.contact-info-val:hover { color: var(--color-gold); }
    FOOTER
    ============================================================ */
 .site-footer {
-  background: var(--color-navy);
+  background: var(--color-green);
   color: rgba(255,255,255,0.65);
   padding: var(--space-20) 0 var(--space-8);
 }
@@ -2299,19 +2427,19 @@ a.contact-info-val:hover { color: var(--color-gold); }
 .footer-logo .logo-accent { color: var(--color-gold); }
 .footer-tagline {
   font-size: var(--text-sm);
-  color: rgba(255,255,255,0.38);
+  color: rgba(255,255,255,0.85);
   line-height: 1.75;
   margin-bottom: var(--space-6);
 }
 .footer-socials { display: flex; gap: var(--space-3); }
 .social-link {
   width: 36px; height: 36px;
-  border: 1px solid rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.25);
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(255,255,255,0.38);
+  color: #FFFFFF;
   transition: all var(--transition-fast);
   text-decoration: none;
 }
@@ -2330,13 +2458,13 @@ a.contact-info-val:hover { color: var(--color-gold); }
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.50);
+  color: #FFFFFF;
   margin-bottom: var(--space-5);
 }
 .footer-nav-list { display: flex; flex-direction: column; gap: var(--space-3); }
 .footer-link {
   font-size: var(--text-sm);
-  color: rgba(255,255,255,0.38);
+  color: rgba(255,255,255,0.85);
   transition: color var(--transition-fast);
   text-decoration: none;
 }
@@ -2344,7 +2472,7 @@ a.contact-info-val:hover { color: var(--color-gold); }
 .footer-link.active { color: var(--color-gold); }
 .footer-newsletter-desc {
   font-size: var(--text-sm);
-  color: rgba(255,255,255,0.38);
+  color: rgba(255,255,255,0.85);
   line-height: 1.65;
   margin-bottom: var(--space-4);
 }
@@ -2369,7 +2497,7 @@ a.contact-info-val:hover { color: var(--color-gold); }
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-navy);
+  color: var(--color-green);
   flex-shrink: 0;
   transition: background var(--transition-fast);
   border: none;
@@ -2410,6 +2538,8 @@ a.contact-info-val:hover { color: var(--color-gold); }
   .dash-body               { grid-template-columns: 1fr 1fr; }
   .contact-layout          { grid-template-columns: 1fr; }
   .about-story-inner       { grid-template-columns: 1fr; }
+  .team-grid               { grid-template-columns: repeat(2, 1fr); }
+  .pillars-grid            { grid-template-columns: repeat(2, 1fr); }
   .about-story-grid        { grid-template-columns: 1fr; }
   .about-story-sidebar     { position: static; }
   .verification-inner      { grid-template-columns: 1fr; }
@@ -2495,215 +2625,3 @@ a.contact-info-val:hover { color: var(--color-gold); }
   .page-hero h1 { font-size: clamp(1.8rem, 6vw, 2.5rem); }
 }
 
-/* ============================================================
-   ACCENT COLOUR SWAP — gold → navy (light bg) / white (dark bg)
-   Exempted: .logo-mark  and .logo-accent keep var(--color-gold)
-   ============================================================ */
-
-/* 1 · Primary / ghost-gold buttons — solid white */
-.btn-primary,
-.btn-gold {
-  background: #FFFFFF;
-  color: #1B3A6B;
-  border-color: #FFFFFF;
-}
-.btn-primary:hover,
-.btn-gold:hover {
-  background: rgba(255,255,255,0.88);
-  border-color: rgba(255,255,255,0.88);
-  color: #1B3A6B;
-}
-.btn-ghost-gold {
-  color: #FFFFFF;
-  border-color: rgba(255,255,255,0.45);
-  background: transparent;
-}
-.btn-ghost-gold:hover {
-  background: rgba(255,255,255,0.10);
-  color: #FFFFFF;
-  border-color: rgba(255,255,255,0.70);
-}
-
-/* 2 · Gold CTA band → navy */
-.home-cta { background: var(--color-navy); }
-.home-cta h2 { color: #FFFFFF; }
-.home-cta p  { color: rgba(255,255,255,0.55); }
-/* Buttons on the navy CTA band */
-.home-cta .btn-dark {
-  background: #FFFFFF;
-  color: #1B3A6B;
-  border-color: #FFFFFF;
-}
-.home-cta .btn-dark:hover {
-  background: rgba(255,255,255,0.88);
-  border-color: rgba(255,255,255,0.88);
-  color: #1B3A6B;
-}
-.home-cta .btn-ghost-dark {
-  color: rgba(255,255,255,0.78);
-  border-color: rgba(255,255,255,0.28);
-  background: transparent;
-}
-.home-cta .btn-ghost-dark:hover {
-  background: rgba(255,255,255,0.08);
-  color: #FFFFFF;
-  border-color: rgba(255,255,255,0.50);
-}
-
-/* 3 · Section labels / eyebrows — navy blue on light, readable on dark */
-.section-label, .eyebrow { color: #1B3A6B; }
-
-/* Override for dark-background sections */
-.how-it-works .section-label,
-.data-sources-band .section-label,
-.construction-stats .section-label,
-.ai-caps-section .section-label,
-.home-cta .section-label,
-.hero-section .section-label { color: rgba(255,255,255,0.42); }
-
-/* 4 · Nav active / hover — keep visible on dark nav glass */
-.nav-link:hover      { color: rgba(255,255,255,0.95); }
-.nav-link.active     { color: #FFFFFF; }
-.nav-link.active::after { background: #FFFFFF; }
-.mobile-nav-link:hover  { color: #FFFFFF; background: rgba(255,255,255,0.05); }
-.mobile-nav-link.active { color: #FFFFFF; }
-
-/* 5 · Hero badge (on dark hero) */
-.hero-badge {
-  border-color: rgba(255,255,255,0.30);
-  color: rgba(255,255,255,0.82);
-}
-.badge-dot { background: rgba(255,255,255,0.70); }
-
-/* 6 · Hero headline italic/accent (on dark hero) */
-.hero-headline em,
-.hero-headline .accent-word { color: #FFFFFF; }
-
-/* 7 · Pillar icons (on light bg cards) */
-.pillar-icon {
-  background: rgba(27,58,107,0.07);
-  border-color: rgba(27,58,107,0.14);
-  color: #1B3A6B;
-}
-/* Featured card override — icon sits on dark navy bg */
-.pillar-card-featured .pillar-icon {
-  background: rgba(255,255,255,0.08);
-  border-color: rgba(255,255,255,0.12);
-  color: rgba(255,255,255,0.80);
-}
-.pillar-card-featured .pillar-cta   { color: rgba(255,255,255,0.80); }
-.pillar-card-featured .pillar-list li::before { background: rgba(255,255,255,0.55); }
-
-/* 8 · Pillar image card CTA link (on light bg) */
-.pillar-img-cta { color: #1B3A6B; }
-
-/* 9 · Featured listings header "View all" (on light bg) */
-.feat-view-all { color: #1B3A6B; }
-
-/* 10 · Listing tag accent (on light bg) */
-.listing-tag-accent {
-  border-color: rgba(27,58,107,0.20);
-  color: #1B3A6B;
-  background: rgba(27,58,107,0.05);
-}
-.metric-value-accent { color: #1B3A6B; }
-
-/* 11 · How-it-works step numbers (on dark navy section bg) */
-.how-step-num {
-  background: rgba(255,255,255,0.08);
-  border-color: rgba(255,255,255,0.10);
-  color: rgba(255,255,255,0.80);
-}
-
-/* 12 · Construction process step (on light bg) */
-.process-step:hover .step-circle {
-  background: #1B3A6B;
-  border-color: #1B3A6B;
-  color: #FFFFFF;
-}
-.step-num-label { color: #1B3A6B; }
-
-/* 13 · Project type tag (on light card bg) */
-.project-type-tag { color: #1B3A6B; }
-
-/* 14 · Construction stats numbers (on dark navy bg) */
-.c-stat-num { color: #FFFFFF; }
-
-/* 15 · Intelligence dashboard (all on dark navy bg) */
-.intel-card-blue .intel-card-value { color: #FFFFFF; }
-.dash-live  { color: #4ADE80; }
-.live-pulse { background: #4ADE80; }
-.dash-score { color: #FFFFFF; }
-.risk-bar-fill { background: rgba(255,255,255,0.45); }
-/* verify-badge-warn keeps gold — it is a semantic warning colour */
-
-/* 16 · AI capability cards (on dark navy bg) */
-.ai-cap-card:hover { border-top-color: rgba(255,255,255,0.18); }
-.ai-cap-icon {
-  background: rgba(255,255,255,0.06);
-  border-color: rgba(255,255,255,0.10);
-  color: rgba(255,255,255,0.78);
-}
-
-/* 17 · Contact sidebar icons (on dark navy cards) */
-.contact-info-icon {
-  background: rgba(255,255,255,0.07);
-  border-color: rgba(255,255,255,0.10);
-  color: rgba(255,255,255,0.72);
-}
-a.contact-info-val:hover { color: #FFFFFF; }
-
-/* 18 · Contact links card (on light bg) */
-.contact-links-card a { color: #1B3A6B; }
-
-/* 19 · Response card icon (on dark navy bg) */
-.response-card-icon { color: rgba(255,255,255,0.65); }
-
-/* 20 · Form focus accents (on light form bg) */
-.form-input:focus { border-bottom-color: #1B3A6B; }
-.form-textarea:focus {
-  border-color: #1B3A6B;
-  box-shadow: 0 0 0 3px rgba(27,58,107,0.09);
-}
-.form-select:focus  { border-color: #1B3A6B; }
-.form-privacy-note a { color: #1B3A6B; }
-
-/* 21 · FAQ (on light bg) */
-.faq-item[open]       { border-left-color: #1B3A6B; }
-.faq-question::after  { color: #1B3A6B; }
-
-/* 22 · Founder quote (overlaid on photo, dark) */
-.founder-quote       { border-left-color: rgba(255,255,255,0.38); }
-.founder-quote footer { color: rgba(255,255,255,0.58); }
-
-/* 23 · Value cards (on light bg) */
-.value-num { color: rgba(27,58,107,0.07); }
-.value-icon {
-  background: rgba(27,58,107,0.06);
-  border-color: rgba(27,58,107,0.12);
-  color: #1B3A6B;
-}
-
-/* 24 · Team role label (on light bg) */
-.team-role { color: #1B3A6B; }
-
-/* 25 · About sidebar location dot (on light bg) */
-.location-dot { background: #1B3A6B; }
-
-/* 26 · Footer socials hover (on dark navy footer) */
-.social-link:hover {
-  border-color: rgba(255,255,255,0.38);
-  color: #FFFFFF;
-  background: rgba(255,255,255,0.06);
-}
-.footer-link:hover  { color: rgba(255,255,255,0.90); }
-.footer-link.active { color: rgba(255,255,255,0.78); }
-.footer-made { color: rgba(255,255,255,0.45); }
-
-/* 27 · Newsletter button (on dark navy footer) */
-.newsletter-btn { background: #FFFFFF; color: var(--color-navy); }
-.newsletter-btn:hover { background: rgba(255,255,255,0.88); }
-.newsletter-input:focus { border-color: rgba(255,255,255,0.32); }
-
-/* 28 · Score ring (on dark bg) */
-.score-ring circle:last-child { stroke: rgba(255,255,255,0.60); }

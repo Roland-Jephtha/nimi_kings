@@ -6,6 +6,14 @@
 (function () {
   'use strict';
 
+  /* ===== PRELOADER ===== */
+  const preloader = document.getElementById('preloader');
+  if (preloader) {
+    const hidePreloader = () => preloader.classList.add('preloader-hide');
+    window.addEventListener('load', () => setTimeout(hidePreloader, 400));
+    setTimeout(hidePreloader, 3000);
+  }
+
   /* ===== STICKY NAV ===== */
   const header = document.getElementById('site-header');
   if (header) {
@@ -21,11 +29,17 @@
   const mobileNav  = document.getElementById('mobile-nav');
 
   if (menuToggle && mobileNav) {
+    const backdrop = document.createElement('div');
+    backdrop.className = 'mobile-nav-backdrop';
+    backdrop.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(backdrop);
+
     const openMenu = () => {
       menuToggle.classList.add('open');
       menuToggle.setAttribute('aria-expanded', 'true');
       mobileNav.classList.add('open');
       mobileNav.setAttribute('aria-hidden', 'false');
+      backdrop.classList.add('visible');
       document.body.style.overflow = 'hidden';
     };
     const closeMenu = () => {
@@ -33,12 +47,15 @@
       menuToggle.setAttribute('aria-expanded', 'false');
       mobileNav.classList.remove('open');
       mobileNav.setAttribute('aria-hidden', 'true');
+      backdrop.classList.remove('visible');
       document.body.style.overflow = '';
     };
 
     menuToggle.addEventListener('click', () => {
       menuToggle.classList.contains('open') ? closeMenu() : openMenu();
     });
+
+    backdrop.addEventListener('click', closeMenu);
 
     mobileNav.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', closeMenu);
@@ -179,7 +196,6 @@
 
   /* ===== CONTACT FORM VALIDATION ===== */
   const contactForm = document.getElementById('contact-form');
-  const formSuccess = document.getElementById('form-success');
 
   if (contactForm) {
     const showError = (fieldId, msg) => {
@@ -231,14 +247,32 @@
       const submitBtn = document.getElementById('form-submit');
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.textContent = 'Sending…';
+        submitBtn.textContent = 'Redirecting to WhatsApp...';
       }
 
-      /* Simulate submission — replace with real endpoint */
-      setTimeout(() => {
-        contactForm.style.display = 'none';
-        if (formSuccess) formSuccess.removeAttribute('hidden');
-      }, 1200);
+      const phone    = document.getElementById('phone');
+      const company  = document.getElementById('company');
+      const location = document.getElementById('location');
+      const budget   = document.getElementById('budget');
+      const message  = document.getElementById('message');
+      const interestText = interest.options[interest.selectedIndex]
+        ? interest.options[interest.selectedIndex].text
+        : '';
+
+      const lines = [
+        'New inquiry from the Nimi Kings website:',
+        `Name: ${name.value.trim()}`,
+        `Email: ${email.value.trim()}`
+      ];
+      if (phone && phone.value.trim()) lines.push(`Phone: ${phone.value.trim()}`);
+      if (company && company.value.trim()) lines.push(`Company: ${company.value.trim()}`);
+      lines.push(`Area of Interest: ${interestText}`);
+      if (location && location.value.trim()) lines.push(`Preferred Location: ${location.value.trim()}`);
+      if (budget && budget.value.trim()) lines.push(`Budget: ${budget.value.trim()}`);
+      if (message && message.value.trim()) lines.push(`Message: ${message.value.trim()}`);
+
+      const waText = encodeURIComponent(lines.join('\n'));
+      window.location.href = `https://wa.me/2349049653231?text=${waText}`;
     });
   }
 

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="About NIMI KINGS — Nigeria's integrated real estate, construction, and AI intelligence company. Our story, values, team, and operating locations." />
-  <title>About — NIMI KINGS</title>
+  <meta name="description" content="About NIMI KINGS: Nigeria's integrated real estate, construction, and agriculture company. Our story, values, team, and operating locations." />
+  <title>About | NIMI KINGS</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -12,10 +12,18 @@
 </head>
 <body>
 
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader-inner">
+      <img src="logo.jpg" alt="" class="preloader-logo" />
+      <div class="preloader-text">NIMI <span class="logo-accent">KINGS</span></div>
+      <div class="preloader-spinner"></div>
+    </div>
+  </div>
+
   <header class="site-header" id="site-header">
     <nav class="nav-container" aria-label="Main navigation">
       <a href="index.html" class="nav-logo" aria-label="NIMI KINGS home">
-        <span class="logo-mark">NK</span>
+        <img src="logo.jpg" alt="Nimi Kings" class="logo-img" />
         <span class="logo-text">NIMI <span class="logo-accent">KINGS</span></span>
       </a>
       <ul class="nav-links" role="list">
@@ -23,7 +31,8 @@
         <li><a href="about.html" class="nav-link active" aria-current="page">About</a></li>
         <li><a href="real-estate.html" class="nav-link">Real Estate</a></li>
         <li><a href="construction.html" class="nav-link">Construction</a></li>
-        <li><a href="intelligence.html" class="nav-link">AI Intelligence</a></li>
+        <li><a href="agriculture.html" class="nav-link">Agriculture</a></li>
+        <li><a href="technology.html" class="nav-link">Technology</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
       <div class="nav-actions">
@@ -33,20 +42,21 @@
         </button>
       </div>
     </nav>
+  </header>
     <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
       <ul class="mobile-nav-links" role="list">
         <li><a href="index.html" class="mobile-nav-link">Home</a></li>
         <li><a href="about.html" class="mobile-nav-link active" aria-current="page">About</a></li>
         <li><a href="real-estate.html" class="mobile-nav-link">Real Estate</a></li>
         <li><a href="construction.html" class="mobile-nav-link">Construction</a></li>
-        <li><a href="intelligence.html" class="mobile-nav-link">AI Intelligence</a></li>
+        <li><a href="agriculture.html" class="mobile-nav-link">Agriculture</a></li>
+        <li><a href="technology.html" class="mobile-nav-link">Technology</a></li>
         <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
       </ul>
       <div class="mobile-nav-cta">
         <a href="contact.html" class="btn btn-primary btn-full">Book a Consultation</a>
       </div>
     </div>
-  </header>
 
   <main>
 
@@ -57,8 +67,18 @@
         <div class="page-hero-content animate-fade-up">
           <span class="page-hero-label">About NIMI KINGS</span>
           <h1>Built on the conviction that African property markets deserve better.</h1>
-          <p>NIMI KINGS is an integrated real estate, construction, and AI intelligence company operating across Nigeria. We exist to make property transactions safer, buildings better, and investment decisions more precise.</p>
+          <p>NIMI KINGS is an integrated real estate, construction, and agriculture company operating across Nigeria. We exist to make property transactions safer, buildings better, and land more productive for the people who own it.</p>
         </div>
+      </div>
+    </section>
+
+    <!-- VISION SCRIPTURE -->
+    <section aria-label="Nimi Kings vision" style="background:var(--color-green);padding:var(--space-16) 0;">
+      <div class="container" style="display:flex;justify-content:center;">
+        <blockquote class="founder-quote animate-fade-up" style="max-width:760px;background:rgba(255,255,255,0.06);">
+          <p>"Then the Lord answered me and said: Write the vision and make it plain on tablets… For the vision is yet for an appointed time… Though it tarries, wait for it; because it will surely come."</p>
+          <footer>Habakkuk 2:2-3, the Nimi Kings Vision</footer>
+        </blockquote>
       </div>
     </section>
 
@@ -68,11 +88,12 @@
         <div class="about-story-grid">
           <div class="about-story-main animate-fade-up">
             <span class="section-label">Our Story</span>
-            <h2 class="section-title" style="margin-bottom:var(--space-6);">Why we exist.</h2>
-            <p>NIMI KINGS was founded with a clear conviction: that the Nigerian property market — and by extension, African property markets — had a trust problem more than a capital problem.</p>
-            <p>Too many buyers have lost money to unverified land. Too many construction projects have stalled due to poor management. Too many investment decisions have been made on gut feel rather than data. We exist to change each of those things simultaneously.</p>
-            <p>Our three-pillar model — Real Estate, Construction, and AI Intelligence — is not three separate businesses. It is one integrated approach. The intelligence layer informs every property we sell and every build we manage. The construction capability allows us to add value to land we help clients acquire. The real estate pipeline feeds the intelligence engine with real transaction data that improves our scoring over time.</p>
-            <p>We operate primarily across Lagos, Nasarawa, Abuja outskirts (FCT), and Kogi State — areas where land values are rapidly shifting and where the risk of misinformation is highest. We chose these corridors because that is where the need is greatest, and where our team has the deepest operational familiarity.</p>
+            <h2 class="section-title" style="margin-bottom:var(--space-6);">Why we're called Nimi Kings.</h2>
+            <p>"Nimi Kings" was born from a belief that true ownership begins beyond property. It begins with purpose.</p>
+            <p>The name "Nimi" draws from a deep expression in the Igala language meaning "I belong to God" or "God owns me." It reflects humility, direction, and the understanding that every true builder is first entrusted with a vision greater than themselves.</p>
+            <p>"Kings" represents authority, dominion, and legacy. It speaks to individuals who rise to take responsibility over land, wealth, and opportunity, not just for themselves, but for generations after them.</p>
+            <p>Together, Nimi Kings represents a journey: from surrender to significance, from vision to ownership, from responsibility to legacy. It is not just a real estate company. It is a platform for building landlords, investors, and legacy holders who understand that true wealth rests on both spiritual grounding and strategic dominion.</p>
+            <p>That conviction now shows up as four working arms: Real Estate, Construction, Agriculture, and Technology, each one a different way of turning land into something that lasts. And it stands on solid legal ground: NIMI KINGS is registered with the Corporate Affairs Commission (CAC) and is SCUML-compliant, giving every transaction full legal standing.</p>
           </div>
           <div class="about-story-sidebar animate-fade-up delay-2">
             <div class="sidebar-stats-card">
@@ -99,6 +120,10 @@
                 <li><span class="location-dot" aria-hidden="true"></span>Kogi State</li>
               </ul>
             </div>
+            <div class="sidebar-locations-card">
+              <h3 class="sidebar-card-title">Legal standing</h3>
+              <p style="font-size:var(--text-sm);color:var(--text-secondary);line-height:1.7;">Registered with the Corporate Affairs Commission (CAC) and compliant with SCUML, the Special Control Unit against Money Laundering, giving every client full legal assurance.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -114,7 +139,7 @@
       <div class="team-photo-overlay">
         <blockquote class="founder-quote animate-fade-up">
           <p>"The Nigerian property market has enormous potential. It also carries enormous risk if you don't have the data, the verification capability, and the execution discipline to back every decision. We are building the infrastructure that takes risk off the table so capital can move with confidence."</p>
-          <footer>— Founder, NIMI KINGS</footer>
+          <footer>Founder, NIMI KINGS</footer>
         </blockquote>
       </div>
     </section>
@@ -139,10 +164,10 @@
           <div class="value-card animate-fade-up delay-2">
             <span class="value-num" aria-hidden="true">02</span>
             <div class="value-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8 6 6 10 6 14a6 6 0 0 0 12 0c0-4-2-8-6-12z"/></svg>
             </div>
-            <h4>Intelligence is infrastructure.</h4>
-            <p>We believe data and AI are not add-ons to property — they are the foundation every reliable transaction should be built on. Our intelligence engine is not a marketing tool. It is a risk reduction system, and we use it on every single deal, not just the ones where clients ask for it.</p>
+            <h4>Land is a legacy, not just an asset.</h4>
+            <p>We treat every parcel, whether sold, built on, or farmed, as something meant to outlast the transaction. That's why we activate idle land instead of leaving it dormant, and why we think in terms of what a property will mean for the next generation, not just the next sale.</p>
           </div>
           <div class="value-card animate-fade-up delay-3">
             <span class="value-num" aria-hidden="true">03</span>
@@ -150,7 +175,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             </div>
             <h4>Execution is the only credibility that matters.</h4>
-            <p>The Nigerian market has many organisations that speak well. Credibility here is earned by delivery — on-time, on-budget, and fully documented. We measure ourselves by what we complete, not what we announce. Every project, every transaction, every report is a test of that commitment.</p>
+            <p>The Nigerian market has many organisations that speak well. Credibility here is earned by delivery: on time, on budget, and fully documented. We measure ourselves by what we complete, not what we announce. Every project, every transaction, every report is a test of that commitment.</p>
           </div>
         </div>
       </div>
@@ -172,7 +197,7 @@
             <div class="team-body">
               <h4>[Name Placeholder]</h4>
               <div class="team-role">Founder &amp; CEO</div>
-              <p class="team-bio">Add real background, expertise, and vision statement from the founder — the specific experience that led to building NIMI KINGS.</p>
+              <p class="team-bio">Add real background, expertise, and vision statement from the founder: the specific experience that led to building NIMI KINGS.</p>
             </div>
           </div>
           <div class="team-card animate-fade-up delay-2">
@@ -182,7 +207,7 @@
             <div class="team-body">
               <h4>[Name Placeholder]</h4>
               <div class="team-role">Head of Real Estate</div>
-              <p class="team-bio">Add expertise, background, and specialist focus area — years in Nigerian property, specific markets covered, transaction volume managed.</p>
+              <p class="team-bio">Add expertise, background, and specialist focus area: years in Nigerian property, specific markets covered, transaction volume managed.</p>
             </div>
           </div>
           <div class="team-card animate-fade-up delay-3">
@@ -192,7 +217,17 @@
             <div class="team-body">
               <h4>[Name Placeholder]</h4>
               <div class="team-role">Head of Construction</div>
-              <p class="team-bio">Add professional engineering or construction management background — qualifications, project types managed, specific expertise areas.</p>
+              <p class="team-bio">Add professional engineering or construction management background: qualifications, project types managed, specific expertise areas.</p>
+            </div>
+          </div>
+          <div class="team-card animate-fade-up delay-4">
+            <div class="team-img-wrap">
+              <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=400&q=80" alt="Head of Agriculture at NIMI KINGS" loading="lazy" />
+            </div>
+            <div class="team-body">
+              <h4>[Name Placeholder]</h4>
+              <div class="team-role">Head of Agriculture</div>
+              <p class="team-bio">Add background in agronomy or farm management: crops managed, land activated, partnership model for farming client-owned land.</p>
             </div>
           </div>
         </div>
@@ -205,7 +240,7 @@
         <div class="home-cta-inner">
           <div>
             <h2>Want to work with us?</h2>
-            <p>Whether you are buying, building, or need an intelligence report — get in touch and we will find the right entry point.</p>
+            <p>Whether you are buying, building, or looking to farm your land, get in touch and we will find the right entry point.</p>
           </div>
           <div class="home-cta-actions">
             <a href="contact.html" class="btn btn-dark btn-lg">Get in Touch</a>
@@ -222,14 +257,14 @@
       <div class="footer-top">
         <div>
           <a href="index.html" class="nav-logo footer-logo" aria-label="NIMI KINGS home">
-            <span class="logo-mark">NK</span>
+            <img src="logo.jpg" alt="Nimi Kings" class="logo-img" />
             <span class="logo-text">NIMI <span class="logo-accent">KINGS</span></span>
           </a>
-          <p class="footer-tagline">Africa's most intelligent real estate platform. Real estate, construction, and AI intelligence — integrated.</p>
+          <p class="footer-tagline">Real estate, construction, and agriculture, integrated across Nigeria.</p>
           <div class="footer-socials" aria-label="Social media links">
-            <a href="#" class="social-link" aria-label="LinkedIn" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-            <a href="#" class="social-link" aria-label="Twitter / X" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></a>
-            <a href="#" class="social-link" aria-label="Instagram" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="https://www.linkedin.com/in/attah-jaypaul-b8595040b" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="https://www.tiktok.com/@nimi.kings.limite" class="social-link" aria-label="TikTok" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M16 3v11.5a3.5 3.5 0 1 1-3-3.46"/><path d="M16 3c.3 2.6 2 4.5 4.5 4.8"/></svg></a>
+            <a href="https://wa.me/2349049653231" class="social-link" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.55L3 20l1.05-5.4A8.5 8.5 0 1 1 21 11.5z"/><path d="M8.5 10.5c.3 2.5 2.5 4.7 5 5"/></svg></a>
           </div>
         </div>
         <nav class="footer-nav" aria-label="Footer navigation">
@@ -238,7 +273,8 @@
             <ul class="footer-nav-list" role="list">
               <li><a href="real-estate.html" class="footer-link">Real Estate</a></li>
               <li><a href="construction.html" class="footer-link">Construction</a></li>
-              <li><a href="intelligence.html" class="footer-link">AI Intelligence</a></li>
+              <li><a href="agriculture.html" class="footer-link">Agriculture</a></li>
+              <li><a href="technology.html" class="footer-link">Technology</a></li>
             </ul>
           </div>
           <div>
@@ -262,8 +298,8 @@
         </nav>
       </div>
       <div class="footer-bottom">
-        <p class="footer-copy">&copy; 2026 NIMI KINGS. All rights reserved.</p>
-        <p class="footer-made">Built with intelligence.</p>
+        <p class="footer-copy">&copy; 2026 NIMI KINGS. All rights reserved. Registered with CAC &amp; SCUML.</p>
+        <p class="footer-made">Real Estate. Construction. Agriculture.</p>
         <div class="footer-legal">
           <a href="#" class="footer-link">Privacy Policy</a>
           <a href="#" class="footer-link">Terms of Service</a>
